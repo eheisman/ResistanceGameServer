@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!-- vim: set syntax=htmljinja: -->
+<HTML>
+<HEAD>
+        <TITLE>The Resistance Signup</TITLE>
+        <SCRIPT type=text/javascript src=register.js></SCRIPT>
+</HEAD>
+<BODY>
+        <H1>Sign up for an account here</H1>
+        <P>Use the form below</P>
+        <FORM action="register" method=POST>
+                Username: <INPUT type=text name=uname /><BR />
+                Password: <INPUT name=pass type=password /><BR />
+                Again: <INPUT name=again type=password /><BR />
+                <!-- ReCaptcha -->
+                <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lfem9YSAAAAAMrpcsWI74_DFNLe_Kzqmz5AMqMK"></script>
+                <noscript>
+                        <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lfem9YSAAAAAMrpcsWI74_DFNLe_Kzqmz5AMqMK"
+                         height="300" width="500" frameborder="0"></iframe><br>
+                        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                </noscript>
+                <INPUT type=submit value="Submit">
+       </FORM>
+</BODY>
+</HTML>
+
