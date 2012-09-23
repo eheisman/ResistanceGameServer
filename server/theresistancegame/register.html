@@ -9,10 +9,19 @@
         <H1>Sign up for an account here</H1>
         <P>Use the form below</P>
         <FORM action="register" method=POST>
-                Username: <INPUT type=text name=uname /><BR />
-                Password: <INPUT name=pass type=password /><BR />
-                Again: <INPUT name=again type=password /><BR />
+                {% if uname_bad %}
+                        <P>{{ uname_bad }}</P>
+                {% endif %}
+                Username: <INPUT type=text name=uname value={{ uname }}/><BR />
+                {% if pwmismatch %}
+                        <P>Password mismatch</P>
+                {% endif %}
+                Password: <INPUT type=password name=pass /><BR />
+                Again: <INPUT type=password name=again /><BR />
                 <!-- ReCaptcha -->
+                {% if captcha_fail %}
+                        <P>Invalid Captcha</P>
+                {% endif %}
                 <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lfem9YSAAAAAMrpcsWI74_DFNLe_Kzqmz5AMqMK"></script>
                 <noscript>
                         <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lfem9YSAAAAAMrpcsWI74_DFNLe_Kzqmz5AMqMK"
